@@ -1,0 +1,29 @@
+{
+	"name": "Hello Extensions",
+	"description" : "Hello world Extension",
+	"version": "1.0",
+	"manifest_version": 2,
+	"browser_action": {
+    	"default_popup": "popup.html",
+    	"default_icon": "hello_extensions.png"
+    },
+	"background": {
+		"page": "background.html"
+	},
+	"icons": {
+		"16": "hello_extensions.png",
+		"128": "hello_extensions.png"
+	},
+	"content_scripts": [{
+		"matches": [ "https://pan.baidu.com/*/*" ],
+		"js": [ "js/jquery.min.js", "js/content-script.js" ]
+	}],
+	"permissions": [
+		"contextMenus",
+		"tabs", 
+		"activeTab", 
+		"http://*/*", 
+		"https://*/*", 
+		"cookies"
+	]
+}
